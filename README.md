@@ -1,4 +1,4 @@
-![img](img/textsummarygraphicred.png)
+![text_summary_graphic](img/textsummarygraphicred.png)
 
 # Building an Extractive Text Summarization Model from the Ground Up
 
