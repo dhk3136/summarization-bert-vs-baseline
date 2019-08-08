@@ -1,9 +1,11 @@
-## Building an Extractive Text Summarization Model from the Ground Up
+[!img](img/textsummarygraphicred.png)
 
-### Overview
+# Building an Extractive Text Summarization Model from the Ground Up
+
+## Overview
 The timing of this project coincides with a special era in Natural Language Processing (NLP), during sudden and enormous gains in model performance, and in particular, within the Transfer Learning method utilizing recently released pretrained models. A couple of years ago, practitioners in Computer Vision experienced the beginning of a similar leap in model performance while NLP progress remained stagnant in comparison. As Sebastian Ruder writes:  
   
-__"NLP's ImageNet moment has arrived."__  
+#### "NLP's ImageNet moment has arrived."  
   
 Behind this NLP progress are a set of pretrained models that when adopted for Transfer Learning, have achieved state-of-the-art scores in a variety of NLP tasks. The trend kicked off with fast.ai's ULMfit LSTM in early 2018. Pretrained and available to all, this momentum witnessed each new model besting the previous. Elmo, BERT, XLNet, Transformer-XL, OpenAI GPT-1, GPT-2, and XLM are just a handful of these high-performance models. The most infamous of all, OpenAI's GPT-2, caused a controversy because its organization refused to release the full code, making it impossible for other researchers and Data Scientists to replicate and verify its results. The focus on GPT-2 was because it made headlines when it showcased its astounding ability to generate news article text virtually indistiguishable from a journalist's. In other words, it (nearly) passed the Turing Test. Eventually, OpenAI released a portion of its code, but not the portion enabling them to break a sound barrier in NLP progress. 
 
