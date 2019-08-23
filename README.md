@@ -2,7 +2,7 @@
 
 # Building an NLP Extractive Text Summarization Model--from the Ground Up
 
-## Introduction and Overview  
+## Overview  
 The timing of this text summarization project coincides with a special era in Natural Language Processing (NLP), during sudden and enormous gains in model performance, and in particular, within Transfer Learning methods utilizing recently released pretrained models (e.g., BERT, XLNet, OpenAI). A couple of years ago, practitioners in Computer Vision experienced the beginning of a similar leap in model performance while NLP progress remained stagnant in comparison. But much has changed: As Sebastian Ruder writes:  
 
 ### "NLP's ImageNet moment has arrived."
@@ -13,4 +13,4 @@ I sought to build an algorithm from the ground up and from which I could openly 
 
 I'd wager that pretrained models (training from scratch takes 1-2 weeks on the fastest set of GPUs) are just on the horizon for professional use by data scientists in various organizations. They achieve state-of-the-art results on most Natural Language Processing "tasks" by standardized metrics, and given the choice, most organizations would not opt to train such a model from scratch for the sake of posterity. If you'd like to check out a showcase of the latest and greatest, I highly recommend [huggingFace's repository](https://github.com/huggingface/pytorch-transformers) which ports these models into PyTorch libraries (as opposed to Tensorflow).  
 
-As such, I have no problem at all with their use. In fact, the release of these models is in accord with the general spirit of open source distribution from which so many benefit. In other words, I'm far from a desire to judge the new and shiny, and I'll likely benefit from the change, as well. In the following section, I'll discuss my EDA process, dataset, and performance metric.
+As such, I have no problem at all with their use. In fact, the release of these models is in accord with the general spirit of open source distribution from which so many benefit. In other words, I'm far from a desire to judge the new and shiny, and I'll likely benefit from the change, as well.
