@@ -34,7 +34,7 @@ Here, we'll use a summarized example from URL text, of which the full-text sampl
 
 BERT Summarizer:  
 ```python
-"Chernobyl is a 2019 historical drama television miniseries created and written by Craig Mazin and directed by Johan Renck for HBO. The miniseries is based in large part on the recollections of Pripyat locals, as told by Belarusian Nobel laureate Svetlana Alexievich in her book Voices from Chernobyl.[2] Writer Craig Mazin began researching for the project in 2014, by reading books and government reports from inside and outside the Soviet Union. Director Johan Renck heavily criticised the amount of diverse and eye-catching modern windows in the houses, but was not concerned about removing them in post-production."
+"Chernobyl is a 2019 historical drama television miniseries created and written by Craig Mazin and\ndirected by Johan Renck for HBO. The miniseries is based in large part on the\nrecollections of Pripyat locals, as told by Belarusian Nobel laureate Svetlana Alexievich in her\nbook Voices from Chernobyl. Writer Craig Mazin began researching for the project in 2014, by\nreading books and government reports from inside and outside the Soviet Union. Director\nJohan Renck heavily criticised the amount of diverse and eye-catching modern windows in the\nhouses, but was not concerned about removing them in post-production."
 ```
 
 This is how BERT sees the first sentence:  
