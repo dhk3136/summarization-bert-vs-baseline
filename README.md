@@ -32,21 +32,17 @@ BERT considers context as part of its inherent design. Not only is BERT an unsup
 ## Analysis  
 Here, we'll use a summarized example from URL text, of which the full-text sample document I've included with summarizer: the Wikipedia page for the critically-acclaimed HBO series, Chernobyl.
 
-BERT Summarizer:  
-```python
-Chernobyl is a 2019 historical drama television miniseries created and written by Craig Mazin and\ndirected by Johan Renck for HBO. The miniseries is based in large part on the\nrecollections of Pripyat locals, as told by Belarusian Nobel laureate Svetlana Alexievich in her\nbook Voices from Chernobyl. Writer Craig Mazin began researching for the project in 2014, by\nreading books and government reports from inside and outside the Soviet Union. Director\nJohan Renck heavily criticised the amount of diverse and eye-catching modern windows in the\nhouses, but was not concerned about removing them in post-production.
-```
+> BERT Summarizer:  
+Chernobyl is a 2019 historical drama television miniseries created and written by Craig Mazin and directed by Johan Renck for HBO. The miniseries is based in large part on the recollections of Pripyat locals, as told by Belarusian Nobel laureate Svetlana Alexievich in her book Voices from Chernobyl. Writer Craig Mazin began researching for the project in 2014, by reading books and government reports from inside and outside the Soviet Union. Director Johan Renck heavily criticised the amount of diverse and eye-catching modern windows in the houses, but was not concerned about removing them in post-production.
 
 This is how BERT sees the first sentence:  
 
 ![bert_masked_tokens](img/BERT_token_predictions_1.jpg)  
 
-Impressive, yes? Not only can BERT predict "drama" with a high probability, its capability really shines when predicting "miniseries" over "series," which to my mind is a distinction difficult even for a human annotator to make. Here's another one:
+Impressive, yes? Not only can BERT predict "drama" with a high probability, its capability really shines when predicting "miniseries" over "series," which to my mind is a distinction difficult even for a human annotator to make.  
+Here's another summary sentence from an article addressing Google Home privacy concerns:  
 
-```python
-"We just learned that one of these language reviewers has violated our data security policies
-by leaking confidential Dutch audio data."
-```  
+> "We just learned that one of these language reviewers has violated our data security policies by leaking confidential Dutch audio data."  
 
 ![bert_masked_tokens_2](img/BERT_token_predictions_2.jpg)  
 
