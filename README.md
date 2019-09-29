@@ -3,10 +3,11 @@
 # BERT vs Vanilla Summarization: A Semantics-First Approach
 
 ## Overview  
-The timing of this text summarization project coincides with a special era in Natural Language Processing (NLP), during sudden and enormous gains in model performance, and in particular, within Transfer Learning methods utilizing recently released pretrained models (e.g., BERT, XLNet, GPT-2). A couple of years ago, practitioners in Computer Vision experienced the beginning of a similar leap in model performance while NLP progress remained stagnant in comparison. But much has changed: As Sebastian Ruder writes:  
+The timing of this text summarization project coincides with a special era in Natural Language Processing (NLP), during sudden and enormous gains in model performance, and in particular, within Transfer Learning methods utilizing recently released pretrained models (e.g., BERT, XLNet, GPT-2). As NLP researcher Sebastian Ruder notes:  
 
 ### "NLP's ImageNet moment has arrived."
   
+That is, just a couple of years ago, practitioners in Computer Vision experienced the beginning of a similar leap in model performance while NLP progress remained stagnant in comparison. But much has changed. 
 
 ## Purpose  
 This project has a two-fold aim:  
@@ -38,7 +39,7 @@ BERT Summarizer:
 
 This is how BERT sees the first sentence:  
 
-![bert_masked_tokens](img/BERT_token_predictions_1.png)  
+![bert_masked_tokens](img/BERT_token_predictions_1.jpg)  
 
 Impressive, yes? Not only can BERT predict "drama" with a high probability, its capability really shines when predicting "miniseries" over "series," which to my mind is a distinction difficult even for a human annotator to make. Here's another one:
 
@@ -46,7 +47,7 @@ Impressive, yes? Not only can BERT predict "drama" with a high probability, its 
 "We just learned that one of these language reviewers has violated our data security policies by leaking confidential Dutch audio data."
 ```  
 
-![bert_masked_tokens_2](img/BERT_token_predictions_2.png)  
+![bert_masked_tokens_2](img/BERT_token_predictions_2.jpg)  
 
 BERT intentionally masks a small ratio of words so that it can predict probabilities of the correct word--in context. This is different from measuring distance as a metric of semantic similarity. In addition, BERT is ambidextrous (maybe too much on the anthropomorphism). The model can take input from both sides which expands its contextual framework resulting in a huge advantage over uni-directional input.  
 
