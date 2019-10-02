@@ -1,4 +1,4 @@
-![text_summary_graphic](img/textsummarygraphicred.png)
+![bert_image](img/bert_grimace.jpg)
 
 # BERT vs Vanilla Summarization: A Semantics-First Approach
 
