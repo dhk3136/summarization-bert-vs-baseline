@@ -1,6 +1,6 @@
 # BERT vs Vanilla Summarization: A Semantics-First Approach
 
-![bert_image](img/bert_grimace.jpg)
+![bert_elmo_grover](img/bert_grover_elmo_original_dimensions_big_borders.png)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dhk3136/bert-vs-vanilla-summarization/blob/master/bert_vs_vanilla_summarizer.ipynb)
 
