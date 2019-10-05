@@ -75,7 +75,7 @@ if choose_bert_or_vanilla == '1':
         print('\nOption B summarizes text documents from Google Drive or your local machine.\n')
         print("\nSimply provide the path to the text document you'd like to summarize.\nOr feel free to copy/paste the filename of one of the sample documents below:\n")
         print('full_text/google_pixel_photobooth_article.txt')
-        print('full_text_samples/wash_post_youth_trending_away_from_news.txt\n')
+        print('full_text/wash_post_youth_trending_away_from_news.txt\n')
         print("If you'd like a copy of your summary, you can find it in the `your_summaries` directory.\n")
 
         document = input('Enter your <path/to/file.txt> here:\n')
