@@ -16,9 +16,6 @@
 * [Datasets](#datasets)
 * [References](#references)
 
-## General info
-This project is simple Lorem ipsum dolor generator.
-
 ## Overview  
 The timing of this text summarization project coincides with a special era in Natural Language Processing (NLP), during sudden and enormous gains in model performance, and in particular, within Transfer Learning methods utilizing recently released pretrained models (e.g., BERT, XLNet, GPT-2). As NLP researcher Sebastian Ruder notes:  
 
