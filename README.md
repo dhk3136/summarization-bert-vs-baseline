@@ -1,7 +1,8 @@
-# BERT vs Vanilla Summarization: A Semantics-First Approach
+# BERT vs Baseline: A Semantics-First Approach to Summarization
 
 ![bert_elmo_grover](img/bert_grover_elmo_original_dimensions_big_borders.png)
-> *Above: BERT, ELMo, and Grover express ambivalence at their exorbitant pretraining costs and having their names attached to transformer networks.*
+> *Above: 
+BERT, ELMo, and Grover express ambivalence at their exorbitant pretraining costs and having their names attached to transformer networks.*
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dhk3136/bert-vs-vanilla-summarization/blob/master/bert_vs_vanilla_summarizer.ipynb)
 
