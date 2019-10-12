@@ -1,6 +1,7 @@
 # BERT vs Vanilla Summarization: A Semantics-First Approach
 
 ![bert_elmo_grover](img/bert_grover_elmo_original_dimensions_big_borders.png)
+> *Above: BERT, ELMo, and Grover express ambivalence at their exorbitant pretraining costs and having their names attached to transformer networks.*
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dhk3136/bert-vs-vanilla-summarization/blob/master/bert_vs_vanilla_summarizer.ipynb)
 
@@ -17,7 +18,7 @@
 * [References](#references)
 
 ## Overview  
-The timing of this text summarization project coincides with a special era in Natural Language Processing (NLP), during sudden and enormous gains in model performance, and in particular, within Transfer Learning methods utilizing recently released pretrained models (above image: BERT, ELMo, and most recently, Grover). As NLP researcher Sebastian Ruder notes:  
+The timing of this text summarization project coincides with a special era in Natural Language Processing (NLP), during sudden and enormous gains in model architecture and performance, and in particular, within Transfer Learning methods utilizing recently released models pretrained on enormous corpora (e.g., entire Wikipedia, Reddit, Book Corpus, more). As a result, new SOTA benchmarks are breaking old ones by incredible margins, sometimes on a weekly basis, and each new model hopes to top the metric charts. As NLP researcher Sebastian Ruder notes:  
 
 ### "NLP's ImageNet moment has arrived."
   
@@ -195,6 +196,9 @@ BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
 
 "[Fine-Tuning GPT-2 from Human Preferences](https://openai.com/blog/fine-tuning-gpt-2/)", *OpenAI Blog*, Sept 19, 2019.
 
+Kavita Ganesan, ChengXiang Zhai, Jiawei Han:
+Opinosis: a graph-based approach to abstractive summarization of highly redundant opinions. Proceedings of the 23rd International Conference on Computational Linguistics (2010).
+
 Rani Horev, "[BERT – State of the Art Language Model for NLP](https://www.lyrn.ai/2018/11/07/explained-bert-state-of-the-art-language-model-for-nlp/)", *LyrnAI*, Nov 7, 2018.
 
 Jeremy Howard, Sebastian Ruder:
@@ -206,18 +210,23 @@ Cross-lingual Language Model Pretraining. CoRR abs/1901.07291 (2019)
 Tony Peng, "[Google’s ALBERT Is a Leaner BERT; Achieves SOTA on 3 NLP Benchmarks](https://medium.com/syncedreview/googles-albert-is-a-leaner-bert-achieves-sota-on-3-nlp-benchmarks-f64466dd583)", *SyncedReview*, Sept 27, 2019.
 
 Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, Luke Zettlemoyer:
-Deep contextualized word representations. CoRR abs/1802.05365 (2018)
+ELMo: Deep contextualized word representations. CoRR abs/1802.05365 (2018)
 
 Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya Sutskever:
 Improving Language Understanding by Generative Pre-Training. Preprint. (2018)
 
 Sebastian Ruder, [NLP Progress](http://nlpprogress.com/english/summarization.html) Summarization.
 
+Rachael Tatman, "[Evaluating Text Output in NLP: BLEU at your own risk](https://towardsdatascience.com/evaluating-text-output-in-nlp-bleu-at-your-own-risk-e8609665a213)", *Towards Data Science*, Jan 15, 2019.
+
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin:
 Attention Is All You Need. CoRR abs/1706.03762 (2017)
 
 Eric Wallace, Jens Tuyls, Junlin Wang, Sanjay Subramanian, Matt Gardner, Sameer Singh:
 AllenNLP Interpret: A Framework for Explaining Predictions of NLP Models. abs/1909.09251 Preprint. (2019)
+
+Rowan Zellers, Ari Holtzman, Hannah Rashkin, Yonatan Bisk, Ali Farhadi, Franziska Roesner, Yejin Choi:
+Defending Against Neural Fake News. 1905.12616 (2019)
 
 Zhilin Yang, Zihang Dai, Yiming Yang, Jaime G. Carbonell, Ruslan Salakhutdinov, Quoc V. Le:
 XLNet: Generalized Autoregressive Pretraining for Language Understanding. CoRR abs/1906.08237 (2019)
