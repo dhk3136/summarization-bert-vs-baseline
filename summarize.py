@@ -129,9 +129,9 @@ if choose_bert_or_vanilla == '1':
         print('\nMust choose from A, B, or C')
 
 
-# vanilla summarizer
+# baseline summarizer
 if choose_bert_or_vanilla == '2':
-    print('Welcome to the Vanilla Summarizer!\n')
+    print('Welcome to the Baseline Model Summarizer!\n')
 
     # choose URL, text file, or string input
     choose_input = input('Enter A for URL input:\nEnter B for text file input:\nEnter C for copy/paste input:\n(case-sensitive)\n')
