@@ -4,7 +4,7 @@
 > *Above: 
 BERT, ELMo, and Grover express ambivalence at their exorbitant pretraining costs and having their names attached to transformer networks.*
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dhk3136/bert-vs-vanilla-summarization/blob/master/bert_vs_vanilla_summarizer.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dhk3136/summarization-bert-vs-baseline/blob/master/summarization_bert_vs_baseline.ipynb)
 
 ## Table of Contents
 * [Overview](#overview)
@@ -41,8 +41,10 @@ Fair enough. If you'd like to jump straight into the summarizer, here are some s
 
 NB: For all options, you'll get your summary printed in the notebook's output. But that's not helpful when you want to retain your summary. As such, the summarizer will output a text file of your summary which you can find in the directory `your_summaries`.  
 
+Oh, and you can summarize with either BERT or the baseline model.  
+
 ## Method and Models  
-The first summarizer serves as a baseline model, a simple algorithm solely using NLTK for processing that does not rely on any form of training or machine learning--just straightforward probabilities for word and sentence inclusion into a final summary. Given its sparsity, its performance (within reason) was a pleasant surprise.
+The first summarizer serves as a baseline model, a simple algorithm solely using NLTK for processing that does not rely on any form of training or machine learning--just straightforward graph, edge, and weight probabilities for word and sentence inclusion into a final summary (e.g., textrank, pagerank). Given its sparsity, its performance (within reason) was a pleasant surprise.
 
 ![bert_glue_benchmarks](img/bert_glue_scores.png)
 
@@ -77,12 +79,12 @@ Here's another summary sentence from an article addressing Google Home's privacy
 
 ![bert_masked_tokens_2](img/BERT_token_predictions_2.jpg)  
 
-BERT intentionally masks a small ratio of words so that it can predict probabilities of the correct word--in context. This is different from measuring distance as a metric of semantic similarity. In addition, BERT is ambidextrous (maybe too much on the anthropomorphism). The model can take input from both sides which expands its contextual framework resulting in a huge advantage over unidirectional input. 
+BERT intentionally masks a small ratio of words so that it can predict probabilities of the correct word--in context. Part of this masking includes subwords (e.g., I ##ay t## nis) made by BERT's sentence piece tokenizer. This is different from measuring distance or weighted connections as a metric of semantic similarity. In addition, BERT is ambidextrous (maybe too much on the anthropomorphism). The model can take input from both sides of *all layers* which expands its contextual framework resulting in a huge advantage over unidirectional input. 
 
 > Here's the full summary:  
 Chernobyl is a 2019 historical drama television miniseries created and written by Craig Mazin and directed by Johan Renck for HBO. The miniseries is based in large part on the recollections of Pripyat locals, as told by Belarusian Nobel laureate Svetlana Alexievich in her book Voices from Chernobyl. Writer Craig Mazin began researching for the project in 2014, by reading books and government reports from inside and outside the Soviet Union. Director Johan Renck heavily criticised the amount of diverse and eye-catching modern windows in the houses, but was not concerned about removing them in post-production.  
 
-> This is what the vanilla model returned:
+> This is what the baseline model returned:
 Vladimir Medinsky, Russian culture minister, whose father was one of the Chernobyl liquidators, called the series “Masterfully made” and “filmed with great respect for ordinary people”.Simultaneously with the initial series announcement, it was confirmed that Jared Harris would star in the series.The series centers around the Chernobyl nuclear disaster of April 1986 and the unprecedented cleanup efforts that followed.The protective plastic screens around victims of Acute Radiation Syndrome (ARS) are used to protect the victims from other people due to their weaker immune system.
 
 BERT's summary is a sound one for the most part. It begins by capturing the exact topic of the (way, way longer) full text. It continues with important background information related to the show's research and sources. The last sentence is a dud, however, as it conveys a minor detail with respect to the lengthy full text. Yet, it's not bad at all for a 4-sentence summary task.
@@ -94,7 +96,7 @@ Let's look at another example. Here, the full text is a much shorter passage. In
 BERT:  
 > We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications.
 
-Vanilla:
+Baseline:
 > Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. BERT is conceptually simple and empirically powerful.  
 
 First, it's worth noting that an abstract is already a form of summary--or at least a short highlight reel. That's an important detail as extractive selection now has a much lower probability of producing strangely out-of-context sentences.
@@ -122,9 +124,9 @@ Here's how I consider transfer learning in general:
 
 > *TRANSFER LEARNING = PRETRAINING + DOMAIN KNOWLEDGE - (TIME COMPRESSION + MATERIAL RESOURCE)*
 
-Take, for example, that BERT takes four days to train from scratch on __16 TPUs__. Keep in mind, this process happens in-house at Google. While those extensive resources are astounding, consider that it takes __2 weeks__ on a single TPU to achieve the same on the *small* BERT-base model at a cost of around $500. This, of course, does not include the time or resources to complete hyperparameter tuning for your specific domain task. Is this cost and resource-prohibitive? I'd wager it is for most of us, including many organizations just trying to get into ML to solve problems. But I'll let you do the math!  
+Take, for example, that BERT takes four days to train from scratch on __16 TPUs__. Keep in mind, this process happens in-house at Google. While those extensive resources are astounding, consider that it takes __2 weeks__ on a single TPU to achieve the same on the *small* BERT-base model at a cost of around $500. This, of course, does not include the time or resources to complete hyperparameter tuning for your specific domain task. Is this cost and resource-prohibitive? I'd wager it is for most of us, including many organizations just trying to get into ML to solve problems. But I'll let you do the math! Actually, I'll do a little bit. XLNet, BERT's counterpart and competitor, costs an estimated $61,000 to pretrain from scratch if reproducing paper results!  
 
-However, BERT leads the way in pushing the Transfer Learning trend for NLP into the spotlight. Google's release of the architecture and source code allowed users to replicate the results--or close to it--for a handful of NLP tasks released in its paper. As expected, TensorFlow, another Google product, was offered as the tensor library supporting BERT. Soon after, a PyTorch port of BERT, achieving identical performance, was released alongside several other NLP transfer learning models growing in popularity (XLNet, OpenAI's controversial GPT-2, XL Transformer, XLM, and transformer models, generally). BERT has been so successful that as soon as XLNet bested its performance on several benchmarks, Facebook decided to release a modified version of BERT named RoBERTa (seriously). Those benchmarks were broken again, and BERT took back his trophy in no time at all.
+However, BERT leads the way in pushing the Transfer Learning trend for NLP into the spotlight. Google's release of the architecture and source code allowed users to replicate the results--or close to it--for a handful of NLP tasks released in its paper. As expected, TensorFlow, another Google product, was offered as the tensor library supporting BERT. Soon after, a PyTorch port of BERT, achieving identical performance, was released alongside several other NLP transfer learning models growing in popularity (XLNet, OpenAI's controversial GPT-2, XL Transformer, XLM, and transformer models, generally). BERT has been so successful that as soon as XLNet bested its performance on several benchmarks, Facebook decided to release a modified version of BERT named RoBERTa (seriously). Those benchmarks were broken again, and BERT took back his trophy in no time at all. Lastly, Grover, released in May 2019, is an adversarial network designed to stop "neural fake news" before it reaches scale.  
 
 Also, this *very* week, three announcements were made regarding Transfer Learning. First, Google releases a distilled version of BERT, named ALBERT (this has got to stop) that is supposed to be more manageable in size, training, and footprint--while outscoring the original BERT in three NLU (Natural Language Understanding) benchmarks. Second, the popular HuggingFace organization released its pretrained models as compatible with TensorFlow 2.0 which now gives users an additional option to PyTorch. Third, AllenNLP, the well-known creators of ELMO, announced full compatibility and porting with the HuggingFace models. More significantly, they released Interpret, an interactive framework for visualizing and explaining what's happening under the hood of many state-of-the-art language models. All this happened in ONE day.
 
